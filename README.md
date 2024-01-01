@@ -1,2 +1,2 @@
 # holaglow-front-challenge
-App made in Angular
+App made in Next.js
