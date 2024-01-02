@@ -1,9 +1,9 @@
-export default function App() {
+import OverviewPage from "./overview/page";
+
+export default function AppPage() {
   return (
     <main>
-      <div>
-        Test
-      </div>
+      <OverviewPage />
     </main>
   );
 }
