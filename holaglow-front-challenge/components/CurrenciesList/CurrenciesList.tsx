@@ -14,12 +14,12 @@ import Paper from "@mui/material/Paper";
 import { useRouter } from "next/navigation";
 
 interface CurrenciesListProps {
-  currencies: Currency[];
+  currencies: Currency[] | null;
 }
 
 function CurrenciesList({ currencies }: CurrenciesListProps) {
   const router = useRouter();
-  
+
   const goToCurrencyDetail = (currencySelected: string) => {
     router.push(`/live/${currencySelected}`);
   };
@@ -35,21 +35,22 @@ function CurrenciesList({ currencies }: CurrenciesListProps) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {currencies.map((currency) => (
-            <TableRow
-              key={currency.name}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              onClick={() => {
-                goToCurrencyDetail(currency.symbol);
-              }}
-            >
-              <TableCell component="th" scope="row">
-                {currency.name}
-              </TableCell>
-              <TableCell align="right">{currency.symbol}</TableCell>
-              <TableCell align="right">{currency.rank.toString()}</TableCell>
-            </TableRow>
-          ))}
+          {currencies &&
+            currencies.map((currency) => (
+              <TableRow
+                key={currency.name}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                onClick={() => {
+                  goToCurrencyDetail(currency.symbol);
+                }}
+              >
+                <TableCell component="th" scope="row">
+                  {currency.name}
+                </TableCell>
+                <TableCell align="right">{currency.symbol}</TableCell>
+                <TableCell align="right">{currency.rank.toString()}</TableCell>
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
     </TableContainer>
