@@ -23,15 +23,34 @@ function CurrenciesList({ currencies }: CurrenciesListProps) {
 
   return (
     <>
-      <Card variant="outlined" style={{ width: "50%" }}>
+    Rank
+      <Card
+        variant="outlined"
+        style={{
+          width: "100%",
+          boxShadow: "rgba(0, 0, 0, 0.75) 0px 6px 15px -1px",
+        }}
+      >
         <List
           className={classes.customScroll}
-          style={{ maxHeight: "90vh", overflow: "auto", position: "relative" }}
+          style={{
+            maxHeight: "90vh",
+            overflow: "auto",
+            position: "relative",
+            paddingTop: 0,
+            paddingBottom: 0,
+          }}
         >
           {currencies &&
             currencies?.map((currency) => (
-              <div key={currency.name} onClick={() => goToCurrencyDetail(currency.symbol)}>
-                <ListItem className={classes.listItem}>
+              <div
+                key={currency.name}
+                onClick={() => goToCurrencyDetail(currency.symbol)}
+              >
+                <ListItem
+                  className={classes.listItem}
+                  style={{ cursor: "pointer" }}
+                >
                   <Grid container spacing={2}>
                     <Grid
                       item
