@@ -1,6 +1,50 @@
-.main {
-    width: 90%;
-    max-width: 40rem;
-    margin: 0 auto;
-    text-align: center;
-  }
+.table {
+  max-height: 300;
+  overflow: "auto";
+  position: "relative"
+}
+
+.itemBorder {
+  cursor: "pointer";
+  border: 1px;
+}
+
+.listItem:hover {
+    background-color: #555;
+    cursor: 'pointer';
+}
+
+.customScroll {
+  overflow-y: auto;
+  transition: scrollbar-color 0.5s ease;
+}
+
+.customScroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.customScroll::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+.customScroll:hover::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+.customScroll:active::-webkit-scrollbar-thumb {
+  background-color: #555;
+}
+
+.customScroll::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+.customScroll:hover::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.customScroll:active::-webkit-scrollbar-track {
+  background-color: #ccc;
+}

@@ -1,17 +1,14 @@
 "use client";
 
-import { Currency } from "@/types/Currency";
+import React from "react";
 import classes from "./Currencies.module.css";
+import { Currency } from "@/types/Currency";
 
-import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+
+import classNames from "classnames";
+import { Card, Grid, List, ListItem, ListItemText } from "@mui/material";
 
 interface CurrenciesListProps {
   currencies: Currency[] | null;
@@ -25,35 +22,48 @@ function CurrenciesList({ currencies }: CurrenciesListProps) {
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">Symbol</TableCell>
-            <TableCell align="right">Rank</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
+    <>
+      <Card variant="outlined" style={{ width: "50%" }}>
+        <List
+          className={classes.customScroll}
+          style={{ maxHeight: "90vh", overflow: "auto", position: "relative" }}
+        >
           {currencies &&
             currencies?.map((currency) => (
-              <TableRow
-                key={currency.name}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                onClick={() => {
-                  goToCurrencyDetail(currency.symbol);
-                }}
-              >
-                <TableCell component="th" scope="row">
-                  {currency.name}
-                </TableCell>
-                <TableCell align="right">{currency.symbol}</TableCell>
-                <TableCell align="right">{currency.rank.toString()}</TableCell>
-              </TableRow>
-              ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+              <div key={currency.name} onClick={() => goToCurrencyDetail(currency.symbol)}>
+                <ListItem className={classes.listItem}>
+                  <Grid container spacing={2}>
+                    <Grid
+                      item
+                      xs={1}
+                      display={"flex"}
+                      alignItems={"center"}
+                      alignContent={"center"}
+                      justifyContent={"center"}
+                    >
+                      <Image
+                        src={`https://assets.coincap.io/assets/icons/${currency.symbol.toLowerCase()}@2x.png`}
+                        width={"30"}
+                        height={"30"}
+                        alt={""}
+                      />
+                    </Grid>
+                    <Grid item xs={8}>
+                      <ListItemText>{currency.symbol}</ListItemText>
+                      <ListItemText>{currency.name}</ListItemText>
+                    </Grid>
+                    <Grid item xs={3}>
+                      <ListItemText>Rank</ListItemText>
+                      <ListItemText>{currency.rank.toString()}</ListItemText>
+                    </Grid>
+                  </Grid>
+                </ListItem>
+                <hr style={{ margin: 0 }} />
+              </div>
+            ))}
+        </List>
+      </Card>
+    </>
   );
 }
 
