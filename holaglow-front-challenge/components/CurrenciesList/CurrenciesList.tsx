@@ -36,7 +36,7 @@ function CurrenciesList({ currencies }: CurrenciesListProps) {
         </TableHead>
         <TableBody>
           {currencies &&
-            currencies.map((currency) => (
+            currencies?.map((currency) => (
               <TableRow
                 key={currency.name}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -50,7 +50,7 @@ function CurrenciesList({ currencies }: CurrenciesListProps) {
                 <TableCell align="right">{currency.symbol}</TableCell>
                 <TableCell align="right">{currency.rank.toString()}</TableCell>
               </TableRow>
-            ))}
+              ))}
         </TableBody>
       </Table>
     </TableContainer>
