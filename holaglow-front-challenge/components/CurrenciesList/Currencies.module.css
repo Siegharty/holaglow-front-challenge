@@ -5,13 +5,11 @@
 }
 
 .itemBorder {
-  cursor: "pointer";
   border: 1px;
 }
 
 .listItem:hover {
-    background-color: #555;
-    cursor: 'pointer';
+    background-color: #eaeaea;
 }
 
 .customScroll {
