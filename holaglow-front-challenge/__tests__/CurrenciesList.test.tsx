@@ -1,6 +1,6 @@
 import CurrenciesList from "@/components/CurrenciesList/CurrenciesList";
 import { render, screen } from "@testing-library/react";
-import Currencies from "@/dataBestCrypto";
+import Currencies from "@/data/dataBestCrypto";
 
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),

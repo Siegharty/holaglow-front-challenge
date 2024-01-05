@@ -11,8 +11,8 @@ import { Card, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import classes from "./CurrencyDetail.module.css";
 
-import dataCryptoDetail from "@/dataCryptoDetailed";
-import dataOverview from "@/dataOverview";
+import dataCryptoDetail from "@/data/dataCryptoDetailed";
+import dataOverview from "@/data/dataOverview";
 
 interface CurrencyDetailProp {
   currencyToCheck: string;

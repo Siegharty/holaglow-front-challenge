@@ -16,4 +16,23 @@ const dataCryptoDetail = {
   takerCoefficient: "1",
   makerCoefficient: "1",
 };
+
+const dataCryptoDetail2 = {
+  time: 1704410436007,
+  symbol: "BTC-USDT",
+  buy: "44281.4",
+  sell: "44281.5",
+  changeRate: "0.0372",
+  changePrice: "1588.9",
+  high: "44741.5",
+  low: "42624.1",
+  vol: "3732.57975325",
+  volValue: "162941143.864547461",
+  last: "44277.3",
+  averagePrice: "43044.00590089",
+  takerFeeRate: "0.001",
+  makerFeeRate: "0.001",
+  takerCoefficient: "1",
+  makerCoefficient: "1",
+};
 export default dataCryptoDetail;
