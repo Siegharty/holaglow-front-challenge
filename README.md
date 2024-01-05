@@ -5,14 +5,14 @@ Aplicacion hecha en Next.js
 *[Tecnologías utilizadas](#tecnologias-utilizadas)
 *[Dependencias de DEV](#dependencias-dev)
 
-# Dependencias para levantar el ambiente:
+## Dependencias para levantar el ambiente:
 - Node.js
 - npm install
 - npm run dev (Para levantar ambiente local en el puerto 3000)
 - npm run test (Para correr las pruebas unitarias)
 
 
-# Dependencias de librerías:
+## Tecnologías utilizadas:
 - Material UI v5
 - Next.js v14
 - React v18
@@ -20,7 +20,7 @@ Aplicacion hecha en Next.js
 - Classname (librería de utilidad para concatenar classes)
 
 
-# Dependencias de librerías en DEV:
+## Dependencias de DEV:
 - Jest
 - Typescript
 - Testing-library
