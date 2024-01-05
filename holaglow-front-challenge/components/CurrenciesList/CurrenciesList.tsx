@@ -30,7 +30,7 @@ function CurrenciesList({ currencies }: CurrenciesListProps) {
 
   return (
     <>
-      <Grid container>
+      <Grid container display={"flex"} alignItems={"text"} alignContent={"center"} justifyContent={"center"} justifyItems={"center"}>
         <Grid item>
           <Typography variant="h4">Ranking</Typography>
         </Grid>
@@ -45,7 +45,7 @@ function CurrenciesList({ currencies }: CurrenciesListProps) {
         <List
           className={classes.customScroll}
           style={{
-            maxHeight: "90vh",
+            maxHeight: "80vh",
             overflow: "auto",
             position: "relative",
             paddingTop: 0,

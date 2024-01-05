@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import classes from "./Market.module.css";
+import classes from "./MarketList.module.css";
 import {
   Card,
   Grid,
@@ -10,7 +10,7 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import { MarketPrices, RateDictionary } from "@/types/MarketPrices";
+import { RateDictionary } from "@/types/MarketPrices";
 import stringToFloat from "@/helpers/stringToFloat";
 
 interface MarketListProps {
@@ -20,7 +20,7 @@ interface MarketListProps {
 export default function MarketList({ prices }: MarketListProps) {
   return (
     <>
-      <Grid container>
+      <Grid container display={"flex"} alignItems={"text"} alignContent={"center"} justifyContent={"center"} justifyItems={"center"}>
         <Grid item>
           <Typography variant="h4">Market overview</Typography>
         </Grid>
@@ -35,7 +35,7 @@ export default function MarketList({ prices }: MarketListProps) {
         <List
           className={classes.customScroll}
           style={{
-            maxHeight: "90vh",
+            maxHeight: "100%",
             overflow: "auto",
             position: "relative",
             paddingTop: 0,

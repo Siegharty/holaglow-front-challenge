@@ -40,9 +40,9 @@ export default async function OverviewPage() {
 
   return (
     <div>
-      <Grid container direction={"row"}>
-        <Grid item>
-          <Typography variant="h3">Holaglow Crypto</Typography>
+      <Grid container direction={"row"} display={"flex"} alignItems={"text"} alignContent={"center"} justifyContent={"center"} justifyItems={"center"}>
+        <Grid item >
+          <Typography variant="h3" >Holaglow Crypto</Typography>
         </Grid>
       </Grid>
       <Grid container spacing={6}>
