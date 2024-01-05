@@ -1,6 +1,7 @@
-Aplicacion hecha en Next.js
+## Aplicacion hecha en Next.js
 
-##Índice
+## Índice
+
 *[Dependencias para levantar el ambiente](#dependencias-ambiente)
 *[Tecnologías utilizadas](#tecnologias-utilizadas)
 *[Dependencias de DEV](#dependencias-dev)
