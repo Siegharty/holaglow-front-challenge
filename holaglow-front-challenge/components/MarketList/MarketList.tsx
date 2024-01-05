@@ -18,9 +18,17 @@ interface MarketListProps {
 }
 
 export default function MarketList({ prices }: MarketListProps) {
+
   return (
     <>
-      <Grid container display={"flex"} alignItems={"text"} alignContent={"center"} justifyContent={"center"} justifyItems={"center"}>
+      <Grid
+        container
+        display={"flex"}
+        alignItems={"text"}
+        alignContent={"center"}
+        justifyContent={"center"}
+        justifyItems={"center"}
+      >
         <Grid item>
           <Typography variant="h4">Market overview</Typography>
         </Grid>
@@ -76,6 +84,7 @@ export default function MarketList({ prices }: MarketListProps) {
                     </Grid>
                     <Grid item xs={3}>
                       <ListItemText>
+                        USD{" "}
                         {stringToFloat(price[Object.keys(price).toString()])}
                       </ListItemText>
                     </Grid>
