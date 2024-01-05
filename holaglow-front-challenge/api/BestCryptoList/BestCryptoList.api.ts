@@ -1,7 +1,12 @@
 import Currencies from "@/data/dataBestCrypto";
 
-export default async function BestCryptoList() {
+function BestCryptoListApi(): string {
+  return "https://api.coinpaprika.com/v1/coins";
+}
+
+async function BestCryptoListMock() {
   const getCurrencies = await Currencies;
   return getCurrencies;
-  //return await fetch("https://api.coinpaprika.com/v1/coins?limit=20&page=1");
 }
+
+export { BestCryptoListApi, BestCryptoListMock };
