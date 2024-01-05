@@ -1,7 +1,7 @@
-import { Currency } from "@/types/Currency";
+import Currencies from "@/data/dataBestCrypto";
 
-const BestCryptoList = async (): Promise<any> => {
-  return await fetch("https://api.coinpaprika.com/v1/coins");
-};
-
-export default BestCryptoList;
+export default async function BestCryptoList() {
+  const getCurrencies = await Currencies;
+  return getCurrencies;
+  //return await fetch("https://api.coinpaprika.com/v1/coins?limit=20&page=1");
+}
