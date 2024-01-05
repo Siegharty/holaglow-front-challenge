@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 
-type useAsyncProps = () => Promise<any>;
+type useAsyncProps = () => any;
 
 const useAsync = <T>(promise: useAsyncProps) => {
   const [data, setData] = React.useState<T | null>(null);
@@ -20,7 +21,7 @@ const useAsync = <T>(promise: useAsyncProps) => {
       }
     };
     fetchData();
-  }, [promise]);
+  }, []);
 
   return { data, error, loading };
 };
