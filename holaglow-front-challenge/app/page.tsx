@@ -4,9 +4,7 @@ import OverviewPage from "./overview/page";
 export default function AppPage() {
   return (
     <main>
-      <DataContextProvider>
-        <OverviewPage />
-      </DataContextProvider>
+      <OverviewPage />
     </main>
   );
 }

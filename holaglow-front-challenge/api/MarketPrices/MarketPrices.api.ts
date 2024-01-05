@@ -4,8 +4,8 @@ function MarketPricesApi() {
   return "https://api.coinbase.com/v2/exchange-rates";
 }
 
-async function MarketPricesApiMock() {
-  return await dataMarket;
+function MarketPricesApiMock() {
+  return dataMarket;
 }
 
 export { MarketPricesApi, MarketPricesApiMock };

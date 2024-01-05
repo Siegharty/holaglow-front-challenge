@@ -1,3 +1,4 @@
+import { DataContextProvider } from "@/context/DataContext";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
@@ -12,12 +13,18 @@ export const metadata: Metadata = {
   description: "Next.js App",
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={roboto.className}>
-        {children}
-      </body>
+      <DataContextProvider>
+        <body suppressHydrationWarning={true} className={roboto.className}>
+          {children}
+        </body>
+      </DataContextProvider>
     </html>
   );
 }

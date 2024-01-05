@@ -23,7 +23,7 @@ export default function CurrencyPage({ params }: CurrencyPageProps) {
           </Link>
         </Grid>
       </Grid>
-      <CurrencyDetail currencyToCheck={params.currency} />
+      <CurrencyDetail symbol={params.currency} />
     </div>
   );
 }

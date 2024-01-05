@@ -18,7 +18,6 @@ interface MarketListProps {
 }
 
 export default function MarketList({ prices }: MarketListProps) {
-
   return (
     <>
       <Grid
@@ -52,7 +51,7 @@ export default function MarketList({ prices }: MarketListProps) {
         >
           {prices &&
             prices.map((price) => (
-              <div key={Object.keys(price)[0]}>
+              <div key={price.key}>
                 <ListItem
                   className={classes.listItem}
                   style={{ cursor: "pointer" }}
@@ -67,25 +66,18 @@ export default function MarketList({ prices }: MarketListProps) {
                       justifyContent={"center"}
                     >
                       <Image
-                        src={`https://assets.coincap.io/assets/icons/${Object.keys(
-                          price
-                        )[0]
-                          .toString()
-                          .toLowerCase()}@2x.png`}
+                        src={`https://assets.coincap.io/assets/icons/${price.key.toLowerCase()}@2x.png`}
                         width={"30"}
                         height={"30"}
                         alt={""}
                       />
                     </Grid>
                     <Grid item xs={8}>
-                      <ListItemText>
-                        {Object.keys(price)[0].toString()}
-                      </ListItemText>
+                      <ListItemText>{price.key}</ListItemText>
                     </Grid>
                     <Grid item xs={3}>
                       <ListItemText>
-                        USD{" "}
-                        {stringToFloat(price[Object.keys(price).toString()])}
+                        USD {stringToFloat(price.value)}
                       </ListItemText>
                     </Grid>
                   </Grid>

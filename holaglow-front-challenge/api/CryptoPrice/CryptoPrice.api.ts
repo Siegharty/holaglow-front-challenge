@@ -1,8 +1,6 @@
 import dataCryptoDetail from "@/data/dataCryptoDetailed";
-async function CryptoPrice(symbol: string) {
-  return await fetch(
-    `https://api.kucoin.com/api/v1/market/stats?symbol=${symbol}-USDT`
-  );
+function CryptoPrice(symbol: string): string {
+  return `https://api.kucoin.com/api/v1/market/stats?symbol=${symbol}-USDT`;
 }
 
 async function CryptoPriceMock(symbol: string) {

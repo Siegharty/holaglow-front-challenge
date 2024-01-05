@@ -13,15 +13,23 @@ import classes from "./CurrencyDetail.module.css";
 
 import dataCryptoDetail from "@/data/dataCryptoDetailed";
 import dataOverview from "@/data/dataOverview";
+import { CryptoPrice } from "@/api/CryptoPrice/CryptoPrice.api";
+import { CryptoDetail } from "@/types/CryptoDetail";
+import { useAsync } from "../hooks/useAsync";
 
 interface CurrencyDetailProp {
-  currencyToCheck: string;
+  symbol: string;
 }
 
-function CurrencyDetail({ currencyToCheck }: CurrencyDetailProp) {
+function CurrencyDetail({ symbol }: CurrencyDetailProp) {
+  const { data, error, isLoading } = useAsync<CryptoDetail[]>(
+    CryptoPrice(symbol),
+    { method: "GET" }
+  );
+
   const filteredCurrency = dataOverview.find(
     (currencyDetail) =>
-      currencyDetail.symbol.toLowerCase() === currencyToCheck.toLowerCase()
+      currencyDetail.symbol.toLowerCase() === symbol.toLowerCase()
   );
 
   const dataCurrencyInformation = filteredCurrency?.quote.USD;
@@ -58,7 +66,7 @@ function CurrencyDetail({ currencyToCheck }: CurrencyDetailProp) {
     >
       <Grid item xs={12}>
         <Image
-          src={`https://assets.coincap.io/assets/icons/${currencyToCheck.toLowerCase()}@2x.png`}
+          src={`https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`}
           width={"50"}
           height={"50"}
           alt={""}
@@ -66,7 +74,7 @@ function CurrencyDetail({ currencyToCheck }: CurrencyDetailProp) {
       </Grid>
       <Grid item xs={12}>
         <Typography>
-          {filteredCurrency?.name} - {currencyToCheck}
+          {filteredCurrency?.name} - {symbol}
         </Typography>
       </Grid>
 

@@ -4,8 +4,8 @@ function BestCryptoListApi(): string {
   return "https://api.coinpaprika.com/v1/coins";
 }
 
-async function BestCryptoListMock() {
-  const getCurrencies = await Currencies;
+function BestCryptoListMock() {
+  const getCurrencies = Currencies;
   return getCurrencies;
 }
 
