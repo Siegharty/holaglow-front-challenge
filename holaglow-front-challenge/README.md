@@ -32,7 +32,7 @@ https://api.kucoin.com/api/v1/market/stats?symbol={code of the cryptocyrrency}-U
 https://api.coinpaprika.com/v1/coins
 
 ### For retrieving the market overview:
-https://cryptingup.com/api/markets
+https://api.coinbase.com/v2/exchange-rates?currency=BTC
 
 
 
