@@ -8,7 +8,14 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 import classNames from "classnames";
-import { Card, Grid, List, ListItem, ListItemText } from "@mui/material";
+import {
+  Card,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from "@mui/material";
 
 interface CurrenciesListProps {
   currencies: Currency[] | null;
@@ -23,7 +30,11 @@ function CurrenciesList({ currencies }: CurrenciesListProps) {
 
   return (
     <>
-    Rank
+      <Grid container>
+        <Grid item>
+          <Typography variant="h4">Ranking</Typography>
+        </Grid>
+      </Grid>
       <Card
         variant="outlined"
         style={{
@@ -71,8 +82,7 @@ function CurrenciesList({ currencies }: CurrenciesListProps) {
                       <ListItemText>{currency.symbol}</ListItemText>
                       <ListItemText>{currency.name}</ListItemText>
                     </Grid>
-                    <Grid item xs={3}>
-                      <ListItemText>Rank</ListItemText>
+                    <Grid item xs={3} display={"flex"} justifyItems={"end"} alignContent={"center"} alignItems={"center"}>
                       <ListItemText>{currency.rank.toString()}</ListItemText>
                     </Grid>
                   </Grid>

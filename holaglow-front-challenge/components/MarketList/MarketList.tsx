@@ -2,7 +2,14 @@
 import React from "react";
 import Image from "next/image";
 import classes from "./Market.module.css";
-import { Card, Grid, List, ListItem, ListItemText } from "@mui/material";
+import {
+  Card,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from "@mui/material";
 import { MarketPrices, RateDictionary } from "@/types/MarketPrices";
 import stringToFloat from "@/helpers/stringToFloat";
 
@@ -13,7 +20,11 @@ interface MarketListProps {
 export default function MarketList({ prices }: MarketListProps) {
   return (
     <>
-      <div>MarketList</div>
+      <Grid container>
+        <Grid item>
+          <Typography variant="h4">Market overview</Typography>
+        </Grid>
+      </Grid>
       <Card
         variant="outlined"
         style={{

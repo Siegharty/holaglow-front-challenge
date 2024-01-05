@@ -41,10 +41,8 @@ export default async function OverviewPage() {
   return (
     <div>
       <Grid container direction={"row"}>
-        <Grid item xs={1}>
-          <Typography variant="h6" component="h2">
-            Overview
-          </Typography>
+        <Grid item>
+          <Typography variant="h3">Holaglow Crypto</Typography>
         </Grid>
       </Grid>
       <Grid container spacing={6}>
