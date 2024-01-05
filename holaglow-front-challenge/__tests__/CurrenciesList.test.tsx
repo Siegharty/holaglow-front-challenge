@@ -10,13 +10,13 @@ describe("Currencies List test", () => {
   it("Render component with 15 elements", () => {
     render(<CurrenciesList currencies={Currencies} />);
 
-    const listItems = screen.getAllByRole("rowheader");
+    const listItems = screen.getAllByRole("listitem");
     expect(listItems.length).toBe(15);
   });
   it("Render component with 0 elements", () => {
     render(<CurrenciesList currencies={[]} />);
 
-    const listItems = screen.queryAllByRole("row-header");
+    const listItems = screen.queryAllByRole("listitem");
     expect(listItems.length).toBe(0);
   });
 });

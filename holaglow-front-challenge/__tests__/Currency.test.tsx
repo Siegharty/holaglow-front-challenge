@@ -3,10 +3,10 @@ import { render, screen } from "@testing-library/react";
 
 describe("Currency Detail Component Test", () => {
   it("Render Component with existing currency", () => {
-    render(<CurrencyDetail currencyToCheck="BTC" />);
+    render(<CurrencyDetail symbol="BTC" />);
 
-    const screenDetail = screen.getAllByRole("rowheader")[0].innerHTML;
-    expect(screenDetail).toBe("BTC-EUR");
+    const screenDetail = screen.getAllByText("Bitcoin - BTC")[0].innerHTML;
+    expect(screenDetail).toBe("Bitcoin - BTC");
   });
 
   it("Render component without information", () => {});
