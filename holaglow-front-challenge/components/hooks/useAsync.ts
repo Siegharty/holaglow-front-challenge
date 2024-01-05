@@ -1,29 +1,28 @@
-"use client";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import React from "react";
 
-type useAsyncProps = () => any;
+export const useAsync = <T>(url: string, options?: AxiosRequestConfig) => {
+  const [data, setData] = React.useState<AxiosResponse | null>(null);
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [error, setError] = React.useState(null);
 
-const useAsync = <T>(promise: useAsyncProps) => {
-  const [data, setData] = React.useState<T | null>(null);
-  const [error, setError] = React.useState<any>(null);
-  const [loading, setLoading] = React.useState<boolean>(true);
+  const fetchData = async () => {
+    setIsLoading(true);
+
+    try {
+      const response: AxiosResponse<T | null> = await axios(url, options);
+      setData(response);
+    } catch (error) {
+      console.log(error);
+      //setError(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   React.useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const result = await promise();
-        setData(result);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchData();
   }, []);
 
-  return { data, error, loading };
+  return { data, isLoading, error };
 };
-
-export default useAsync;
