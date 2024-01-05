@@ -1,9 +1,12 @@
+import { DataContextProvider } from "@/context/DataContext";
 import OverviewPage from "./overview/page";
 
 export default function AppPage() {
   return (
     <main>
-      <OverviewPage />
+      <DataContextProvider>
+        <OverviewPage />
+      </DataContextProvider>
     </main>
   );
 }
